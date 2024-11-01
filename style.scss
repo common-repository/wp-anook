@@ -1,0 +1,272 @@
+
+div.anook-badge, div.anook-badge *{
+	box-sizing:border-box;
+}
+
+// standard size
+div.anook-badge{
+	padding:20px;
+	color:white;
+	background:rgb(60,60,60);
+	overflow:hidden;
+	background: top right url("images/background.png") rgb(29,28,28) no-repeat ;
+	background-size:160%;
+	border-radius:3px;
+	margin:20px auto;
+	width:100% !important;
+	max-width:100%;
+	a{
+		color:white;
+		text-decoration: none !important;
+	}
+	span{
+		display:block;
+		overflow:hidden;
+	}
+	small{
+		color:#8C8C8C;
+		font-size: 12px;
+		line-height: 12px;
+		display:block;
+		overflow:hidden;
+	}
+	img.logo{
+		opacity:0.2;
+	}
+	img.logo:hover{
+		opacity:0.5;
+	}
+
+	.img-container{
+		max-width:45%; /* max-width 45% is = to 128px / 320px */
+		max-height:94px;
+		overflow:hidden;
+		float:left;
+		margin:0 auto;
+		img{
+			width:100%;
+		}
+	}
+	
+	div.img-container-nook img{
+		width:64px;
+	}
+
+	div.right{
+		margin-left:20px;
+		margin-top:-4px;
+		display:inline-block;
+		small#country{
+			margin-bottom:20px;
+			color:#8C8C8C;
+			overflow:visible;
+		}
+		span#username{
+			line-height: 16px;
+			margin-bottom: 4px;
+			a{
+				font-size:16px;
+			}
+		}
+	}
+
+	a#follow-button{
+		color:#8C8C8C;
+		background: #464343 url('images/listItemAction.png') no-repeat 0px -40px;
+		transition:text .2s linear;
+		padding:2px 8px 2px 20px;
+		border-radius:2px;
+		font-size:12px;
+		overflow:hidden;
+	}
+	a#follow-button:hover{
+		color:white;
+		background-position:0px -80px;
+	}
+	ul.games_list{
+		list-style:none;
+		margin:15px 0 0;
+		padding:15px 0 0;
+		border:0;
+		border-top:1px solid rgba(255,255,255,0.2);
+		background:none;
+		li.game{
+			list-style:none;
+			margin:0;
+			padding:0;
+			border:0;
+			background:none;
+			line-height:20px;
+			overflow:hidden;
+			margin-bottom:10px;
+			.img-container{
+				width:54px;
+				height:40px;
+				overflow:hidden;
+				border-radius:3px;
+				margin-right:-40px;
+				img{
+					height:40px;
+					width:54px;
+				}
+			}
+			div.right{
+				margin-left:55px;
+				a{
+					display:block;
+					width:100%;
+					white-space:nowrap;
+					text-overflow:ellipsis;
+					overflow:hidden;
+				}
+			}
+			&:after{
+				content:" ";
+				display:block;
+				width:100%;
+				clear:both;
+			}
+		}
+		li.game:last-child{
+			margin-bottom:0;
+		}
+		li.game:before, li.game:after{
+			content:none;
+			background:none;
+			padding:0;
+			margin:0;
+		}
+	}
+	// anook user
+	&.anook-user{
+		.logo-container{
+			margin:0 !important;
+			.logo{
+				height:15px;
+				float:right;
+				clear:right;
+				transition:opacity .2s ease-in;
+				margin-bottom:15px;
+			}
+		}
+	}
+
+	// awkward stuff
+	&:last-child{
+		margin-bottom:0; /* If you have one above the other - relates to the shortcode [anook user="surdaft" nook="3855"]  */
+	}
+	&:not(.anook-user){
+		.logo{
+			float:right;
+			height:60px;
+			margin-bottom:0;
+		}
+	}
+	&.thin:not(.anook-user){
+		.logo{
+			display:none;
+		}
+		.right{
+			width:135px;
+		}
+	}
+
+}
+
+// thin
+div.anook-badge.thin{
+	text-align:center;
+	div.img-container{
+		width:auto;
+		height:auto;
+		float:none;
+	}
+	div.img-container-nook{
+		width:64px;
+		height:64px;
+		overflow:hidden;
+		float:left;
+	}
+	div.right{
+		margin-left:0 !important;
+		display:block;
+		width:100%;
+		max-width:none;
+		small{
+			margin:4px 0;
+		}
+		small#country{
+			margin-top:5%;
+		}
+		span#username{
+			margin-top: 10px;
+		}
+	}
+	ul.games_list{
+		margin-top:15px;
+		li.game{
+			.img-container{
+				margin:0 auto 5%;
+			}
+		}
+		li.game:not(:first-child){
+			padding-top:10%;
+			border-top:1px solid rgba(200,200,200,0.1);
+		}
+	}
+}
+div.anook-badge.thin > #image-container-nook{
+	overflow:hidden;
+	height:auto;
+	width:auto;
+	float:none;
+}
+
+// really thin
+.anook-badge.nook-ultra-thin .img-container-nook{
+	display:block;
+	float:none;
+	width:auto;
+}
+
+
+// admin
+div.anook_admin{
+	.anook_admin_games_list{
+		input[type=text]{
+			width:90%;
+		}
+		i.fa.fa-search{
+			width:10%;
+			text-align: center;
+			cursor:pointer;
+		}
+	}
+	.results, .saved{
+		.result, .saved_game{
+			border:1px solid rgb(230,230,230);
+			.add_game, .remove_game{
+				padding:5px 9.29px;
+				float:left;
+				background:rgb(230,230,230);
+				cursor:pointer;
+				transition:all .2s linear;
+				&:hover{
+					background:rgb(220,220,220);
+				}
+			}
+			.remove_game{
+				padding:5px 10.92px;
+			}
+			.game_name{
+				padding:5px;
+				display:block;
+				margin-left:26px;
+				background:rgb(240,240,240);
+			}
+		}
+		.saved_game:not(:first-child){
+			border-top:0;
+		}
+	}
+}
